@@ -10,7 +10,7 @@ The Not So Bullet Speed Bullet Train Instructions
 | Shikabuto -> Gurando       |   0 1   |
 | Hondaka -> Nagareru        |   0 1   |
 | Hondaka -> Neo Osaka       |   1 0   |
-| Neo Osaka -> Nagareru      |   0 1   |
-| Neo Osaka -> Gurando       |   1 0   |
+| Neo Osaka -> Nagareru      |   1 0   |
+| Neo Osaka -> Gurando       |   0 1   |
 | Neo Osaka -> Central       |   ANY   |
 |--------------------------------------|
