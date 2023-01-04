@@ -1,4 +1,4 @@
-# NotSoBulletSpeedBulletTrain
+# Not So Bullet Speed Bullet Train
 
 Hello hello hello! This is the Not So Bullet Speed Bullet Train. Basically put, it's a simple system made using the Finite State Machine theory,
 and implementing further steps such as the Truth Table, State Table, Karnaugh Maps and its Boolean Equations. Enjoy!
