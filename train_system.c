@@ -11,68 +11,6 @@
 // 5 = Hondaka
 // 6 = Neo Osaka
 
-int main(void) {
-    int Current_Station, Button_1, Button_2, Next_Station, User_Directions;
-
-    Current_Station = 1;
-
-    InstructionsMenu();
-
-    printf("\n");
-    printf("\n");
-    printf("------------ The Not so Bullet Speed Bullet Train -----------\n");
-    printf("--------------------- Andrew Tanuwijaya ---------------------\n");
-    printf("\n");
-    printf("\n");
-
-    // Start code so train keeps running.
-
-    start:
-        // Clear the terminal.
-        system("cls");
-
-        // Print the Station Map.
-        StationPrinter(Current_Station);
-
-        printf("Enter your button presses: ");
-        scanf("%d %d", &Button_1, &Button_2);
-
-        if (Current_Station == 1){
-            Next_Station = EkiCentral(Button_1, Button_2);
-            Current_Station = Next_Station;
-        }
-
-        else if (Current_Station == 2){
-            Next_Station = EkiGurando(Button_1, Button_2);
-            Current_Station = Next_Station;
-        }
-
-        else if (Current_Station == 3){
-            Next_Station = EkiNagareru(Button_1, Button_2);
-            Current_Station = Next_Station;
-        }
-
-        else if (Current_Station == 4){
-            Next_Station = EkiShikabuto(Button_1, Button_2);
-            Current_Station = Next_Station;
-        }
-
-        else if (Current_Station == 5){
-            Next_Station = EkiHondaka(Button_1, Button_2);
-            Current_Station = Next_Station;
-        }
-
-        else if (Current_Station == 6){
-            Next_Station = EkiNeoOsaka(Button_1, Button_2);
-            Current_Station = Next_Station;
-        }
-
-        goto start;
-
-    return 0;
-
-    }
-
 // Functions For Each Station
 int EkiCentral(int Button_1, int Button_2){
     int Next_Station;
@@ -112,7 +50,7 @@ int EkiGurando(int Button_1, int Button_2){
     return Next_Station;
 }
 
-int EkiNagareru(Button_1, Button_2){
+int EkiNagareru(int Button_1, int Button_2){
     int Next_Station;
 
     if (Button_1 == 0 && Button_2 == 0 || Button_1 == 1 && Button_2 == 1){
@@ -131,7 +69,7 @@ int EkiNagareru(Button_1, Button_2){
     return Next_Station;
 }
 
-int EkiShikabuto(Button_1, Button_2){
+int EkiShikabuto(int Button_1, int Button_2){
     int Next_Station;
 
     if (Button_1 == 0 && Button_2 == 0 || Button_1 == 1 && Button_2 == 1){
@@ -150,7 +88,7 @@ int EkiShikabuto(Button_1, Button_2){
     return Next_Station;
 }
 
-int EkiHondaka(Button_1, Button_2){
+int EkiHondaka(int Button_1, int Button_2){
     int Next_Station;
 
     if (Button_1 == 0 && Button_2 == 0 || Button_1 == 1 && Button_2 == 1){
@@ -169,7 +107,7 @@ int EkiHondaka(Button_1, Button_2){
     return Next_Station;
 }
 
-int EkiNeoOsaka(Button_1, Button_2){
+int EkiNeoOsaka(int Button_1, int Button_2){
     int Next_Station;
 
     if (Button_1 == 0 && Button_2 == 0 || Button_1 == 1 && Button_2 == 1){
@@ -189,7 +127,7 @@ int EkiNeoOsaka(Button_1, Button_2){
 }
 
 
-int StationPrinter(Current_Station){
+int StationPrinter(int Current_Station){
 
     // Title
     printf("------------ The Not so Bullet Speed Bullet Train -----------\n");
@@ -371,3 +309,70 @@ void InstructionsMenu(){
 
 }
 
+int main(void) {
+    int Current_Station, Button_1, Button_2, Next_Station, User_Directions;
+
+    Current_Station = 1;
+
+    InstructionsMenu();
+
+    printf("\n");
+    printf("\n");
+    printf("------------ The Not so Bullet Speed Bullet Train -----------\n");
+    printf("--------------------- Andrew Tanuwijaya ---------------------\n");
+    printf("\n");
+    printf("\n");
+
+    // Start code so train keeps running.
+
+    while(1){
+        // Clear the terminal.
+        system("cls");
+
+        // Print the Station Map.
+        StationPrinter(Current_Station);
+
+        printf("Please input button 1 value (0 or 1): ");
+        scanf("%d", &Button_1);
+        printf("Please input button 2 value (0 or 1): ");
+        scanf("%d", &Button_2);
+
+        if(Button_1 == -1 && Button_2 == -1 ){
+            break;
+        }
+
+        if (Current_Station == 1){
+            Next_Station = EkiCentral(Button_1, Button_2);
+            Current_Station = Next_Station;
+        }
+
+        else if (Current_Station == 2){
+            Next_Station = EkiGurando(Button_1, Button_2);
+            Current_Station = Next_Station;
+        }
+
+        else if (Current_Station == 3){
+            Next_Station = EkiNagareru(Button_1, Button_2);
+            Current_Station = Next_Station;
+        }
+
+        else if (Current_Station == 4){
+            Next_Station = EkiShikabuto(Button_1, Button_2);
+            Current_Station = Next_Station;
+        }
+
+        else if (Current_Station == 5){
+            Next_Station = EkiHondaka(Button_1, Button_2);
+            Current_Station = Next_Station;
+        }
+
+        else if (Current_Station == 6){
+            Next_Station = EkiNeoOsaka(Button_1, Button_2);
+            Current_Station = Next_Station;
+        }
+
+    }
+
+    return 0;
+
+    }
