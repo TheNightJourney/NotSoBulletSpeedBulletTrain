@@ -295,10 +295,8 @@ int StationPrinter(int Current_Station){
 }
 
 void InstructionsMenu(){
-
-    system("cls");
-    system("clear");
-    printf(ANSI_CLEAR_SCREEN);
+    printf("\033[2J");
+    printf("\033[1;1H");
 
     printf("To control the train, you have to use two buttons.\n");
     printf("To press a button, press '1' when prompted.\n");
@@ -308,9 +306,8 @@ void InstructionsMenu(){
     // To exit the screen
     printf("Press Enter to continue...");
     getchar();
-    system("cls");
-    system("clear");
-    printf(ANSI_CLEAR_SCREEN);
+    printf("\033[2J");
+    printf("\033[1;1H");
 }
 
 int main(void) {
@@ -331,9 +328,9 @@ int main(void) {
 
     while(1){
         // Clear the terminal.
-        system("cls");
-        system("clear");
-        printf(ANSI_CLEAR_SCREEN);
+
+        printf("\033[2J");
+        printf("\033[1;1H");
 
         // Print the Station Map.
         StationPrinter(Current_Station);
