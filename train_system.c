@@ -3,6 +3,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <string.h>
+#define ANSI_CLEAR_SCREEN  "\033[2J"
 
 // 1 = Central
 // 2 = Gurando
@@ -113,11 +114,11 @@ int EkiNeoOsaka(int Button_1, int Button_2){
     if (Button_1 == 0 && Button_2 == 0 || Button_1 == 1 && Button_2 == 1){
         Next_Station = 1;
     }
-    else if (Button_1 == 1 && Button_2 == 0){
-        Next_Station = 2;
-    }
     else if (Button_1 == 0 && Button_2 == 1){
         Next_Station = 3;
+    }
+    else if (Button_1 == 1 && Button_2 == 0){
+        Next_Station = 2;
     }
     else{
         exit(0);
@@ -296,6 +297,8 @@ int StationPrinter(int Current_Station){
 void InstructionsMenu(){
 
     system("cls");
+    system("clear");
+    printf(ANSI_CLEAR_SCREEN);
 
     printf("To control the train, you have to use two buttons.\n");
     printf("To press a button, press '1' when prompted.\n");
@@ -306,7 +309,8 @@ void InstructionsMenu(){
     printf("Press Enter to continue...");
     getchar();
     system("cls");
-
+    system("clear");
+    printf(ANSI_CLEAR_SCREEN);
 }
 
 int main(void) {
@@ -328,6 +332,8 @@ int main(void) {
     while(1){
         // Clear the terminal.
         system("cls");
+        system("clear");
+        printf(ANSI_CLEAR_SCREEN);
 
         // Print the Station Map.
         StationPrinter(Current_Station);
